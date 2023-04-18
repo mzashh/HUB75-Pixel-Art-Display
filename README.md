@@ -14,7 +14,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 
   * It then plays the GIF files stored in the SPI Flash of the ESP32.
 
-  * I have also implemented a WEB-UI using a async web server which allows to upload, delete, download and play other GIF files on the ESP32.
+  * I have also implemented a WEB-UI using an Async web server which allows to upload, delete, download and play other GIF files on the ESP32.
 
   * The WEB-UI also has auth functionality and allows for remote rebooting of the ESP32.
 
