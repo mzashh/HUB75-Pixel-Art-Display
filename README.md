@@ -4,6 +4,8 @@ A LED Pixel Art Display based on HUB75 panels driven by the ESP32
 # Features
 As of now the firmware has minimum fuctionality, it plays a GIF files stored in the SPI Flash of the ESP32.
 
+Upon powering up the Panel shows the firmware version, IP address, RSSI and WIFI SSID for 4 sec
+
 I have also implemented a WEB-UI using a async web server which allows to upload, delete, download and delete GIFS on the ESP32.
 
 The WEB-UI also has auth functionality and allows for remote rebooting of the ESP32.
@@ -43,4 +45,28 @@ The WEB-UI also has auth functionality and allows for remote rebooting of the ES
   https://github.com/me-no-dev/ESPAsyncWebServer
   
   https://github.com/me-no-dev/AsyncTCP
+  
+* Default credentials
+  
+  The WIFI SSID can be changed in firmware.ino line 36 (only use 2.4GHZ network as the ESP32 supports those only)
+  
+  The WIFI password can be changed in firmware.ino line 37
+  
+  The WEB-UI username can be changed in firmware.ino line 38
+  
+  The WEB-UI password can be changed in firmware.ino line 39
+  
+  * Misc stuff
+    
+    The brightness can be changed in firmware.ino line 289 (value can be 0-255)
+    
+    If you want the Panel to play all stored GIFS one by one automatically in firmware.ino uncomment lines 410-412
+    
+    If you want the Panel to wait until WIFI is connected in firmware.ino uncomment lines 334-336
+    
+    Other resolution Panels can be used as per the use cases shown in https://github.com/mrfaptastic/ESP32-HUB75-      MatrixPanel-DMA
+    
+  
+   
+  
 
