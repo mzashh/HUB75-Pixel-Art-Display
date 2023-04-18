@@ -419,6 +419,3 @@ void loop()
       
       delay(1000); // pause before restarting  
    }
-
-
- 
