@@ -71,7 +71,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
     
   * The brightness can be changed in firmware.ino line 289 (value can be 0-255)
     
-  * If you want the Panel to play all stored GIFS one by one automatically in firmware.ino uncomment lines 410-412
+  * If you want the Panel to play all stored GIFS one by one instead of just looping a particular one then in firmware.ino uncomment lines 410-412
     
   * If you want the Panel to wait until WIFI is connected in firmware.ino uncomment lines 334-336
     
