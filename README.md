@@ -37,7 +37,10 @@ The WEB-UI also has auth functionality and allows for remote rebooting of the ES
 * Required libraries
 
   https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA
+  
   https://github.com/bitbank2/AnimatedGIF
+  
   https://github.com/me-no-dev/ESPAsyncWebServer
+  
   https://github.com/me-no-dev/AsyncTCP
 
