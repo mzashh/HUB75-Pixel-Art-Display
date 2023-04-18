@@ -12,6 +12,7 @@ The WEB-UI also has auth functionality and allows for remote rebooting of the ES
 
 #Hardware
 Any HUB75 panel compatible with the https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA library
+
 An ESP32, S2 or S3 
 
 Schematics
