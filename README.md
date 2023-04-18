@@ -4,7 +4,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 * The colours are much more vibrant in person, also the flickring only shows up on camera.
 
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/0b07346fc8cc3d03d0695789decbcbfdee4621c5/images/display.jpg" width="500">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/display.jpg" width="500">
 </p>
 
 # Features
@@ -17,7 +17,7 @@ I have also implemented a WEB-UI using a async web server which allows to upload
 The WEB-UI also has auth functionality and allows for remote rebooting of the ESP32.
 
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/6dd2d68b21905c8d801fee8adb18e6ca6addbe45/images/UI.png" width="450">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/UI.png" width="450">
 </p>
 
 # Hardware
