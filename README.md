@@ -4,7 +4,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 * The colours are much more vibrant in person, also the flickring only shows up on camera.
 
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/0b07346fc8cc3d03d0695789decbcbfdee4621c5/images/display.jpg" width="450">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/0b07346fc8cc3d03d0695789decbcbfdee4621c5/images/display.jpg" width="500">
 </p>
 
 # Features
