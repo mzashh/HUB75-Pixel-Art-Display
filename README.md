@@ -6,7 +6,7 @@ As of now the firmware has minimum fuctionality, it plays a GIF files stored in 
 
 Upon powering up the Panel connets to the WIFI network and shows the firmware version, IP address, RSSI and WIFI SSID for 4 sec.
 
-I have also implemented a WEB-UI using a async web server which allows to upload, delete, download and delete GIFS on the ESP32.
+I have also implemented a WEB-UI using a async web server which allows to upload, delete, download and play GIF files on the ESP32.
 
 The WEB-UI also has auth functionality and allows for remote rebooting of the ESP32.
 
