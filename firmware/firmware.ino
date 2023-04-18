@@ -284,7 +284,7 @@ void setup() {
 
   // Display Setup
   dma_display = new MatrixPanel_I2S_DMA(mxconfig);
-  dma_display->setRotation(0);
+  dma_display->setRotation(0); // Flip display by 90°, the value can be 0-4
   dma_display->begin();
   dma_display->setBrightness8(210); //0-255
   dma_display->clearScreen();
@@ -309,7 +309,7 @@ void setup() {
   // Start filesystem
   Serial.println(" * Loading SPIFFS");
   if(!SPIFFS.begin()){
-        Serial.println("SPIFFS Mount Failed");
+  Serial.println("SPIFFS Mount Failed");
   }
   
   dma_display->begin();
@@ -368,8 +368,6 @@ void setup() {
   dma_display->print("RSSI:"); dma_display->println(WiFi.RSSI());
   dma_display->setCursor(0, 52);  
   dma_display->print("SSID:"); dma_display->println(WiFi.SSID());
-  
-
   delay(4000);
   dma_display->fillScreen(dma_display->color565(0, 0, 0));
   gif.begin(LITTLE_ENDIAN_PIXELS);
