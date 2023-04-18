@@ -1,5 +1,5 @@
 # HUB75-Pixel-Art-Display
-A LED Pixel Art Display based on HUB75 panels driven by the ESP32
+A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panels driven by the ESP32
 
 # Features
 As of now the firmware has minimum fuctionality, it plays a GIF files stored in the SPI Flash of the ESP32.
