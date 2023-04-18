@@ -15,7 +15,7 @@ Any HUB75 panel compatible with the https://github.com/mrfaptastic/ESP32-HUB75-M
 
 An ESP32, S2 or S3 
 
--Schematics
+#Schematics
  * GPIO 34+ are on the ESP32 are input only!!
  * GPIO 5, 23, 18, 19 are reserverd for a SD card which will be added in the future
 
