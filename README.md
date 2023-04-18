@@ -4,7 +4,7 @@ A LED Pixel Art Display based on HUB75 panels driven by the ESP32
 # Features
 As of now the firmware has minimum fuctionality, it plays a GIF files stored in the SPI Flash of the ESP32.
 
-Upon powering up the Panel shows the firmware version, IP address, RSSI and WIFI SSID for 4 sec
+Upon powering up the Panel connets to the WIFI network and shows the firmware version, IP address, RSSI and WIFI SSID for 4 sec
 
 I have also implemented a WEB-UI using a async web server which allows to upload, delete, download and delete GIFS on the ESP32.
 
