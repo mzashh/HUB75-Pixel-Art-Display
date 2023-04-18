@@ -1,6 +1,4 @@
 //By mzashh https://github.com/mzashh
-//Animated GIF from https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA
-//WEB-UI base from https://github.com/smford/esp32-asyncwebserver-fileupload-example
 
 #define FILESYSTEM SPIFFS
 #include <SPIFFS.h>
