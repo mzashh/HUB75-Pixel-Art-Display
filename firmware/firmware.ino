@@ -407,10 +407,9 @@ void loop()
                 ShowGIF(filePath);
                
               }
-             // dma_display->fillScreen(dma_display->color565(0, 0, 0));
-            // dma_display->setBrightness8(10);    // uncomment lines 366-369 to play all GIFS in SPIFF in a loop.
-           //gifFile.close();
-          //gifFile = root.openNextFile();
+             // dma_display->fillScreen(dma_display->color565(0, 0, 0)); 
+            //gifFile.close(); // uncomment lines 410-412 to play all GIFS in SPIFF in a loop.
+           //gifFile = root.openNextFile();
             }
          root.close();
       }  //root
