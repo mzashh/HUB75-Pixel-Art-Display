@@ -13,7 +13,7 @@ The WEB-UI also has auth functionality and allows for remote rebooting of the ES
 ![alt text](https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/6dd2d68b21905c8d801fee8adb18e6ca6addbe45/images/UI.png)
 
 # Hardware
-* Any HUB75 panel compatible with the https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA library
+* Any HUB75 panel compatible with the https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA library (by default a 64x64 1/32 scan panel)
 
 * An ESP32, S2 or S3 
 
