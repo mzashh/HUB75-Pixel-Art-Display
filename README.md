@@ -20,8 +20,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
   
   * Added support for 1/8 scan panels via modified library, use firmware_1-8 and modified library.
   
-  * By default a 32x32 1/8 scan outdoor panel.
-
+  
 <p align="center">
 <img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/UI.png" width="450">
 </p>
@@ -29,6 +28,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 # Hardware
 * Any HUB75 panel compatible with the https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA library 
 * By default a 64x64 1/32 scan panel is supported.
+* For firmware_1-8, by default a 32x32 1/8 scan outdoor panel is supported.
 
 * An ESP32, S2 or S3. 
 
