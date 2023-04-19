@@ -216,8 +216,6 @@ void ShowGIF(char *name)
 
 } /* ShowGIF() */
 
-} // end loop
-
 
 void rebootESP(String message) {
   Serial.print("Rebooting ESP32: "); Serial.println(message);
@@ -406,7 +404,7 @@ void loop()
                
               }
              // dma_display->fillScreen(dma_display->color565(0, 0, 0)); 
-            //gifFile.close(); // uncomment lines 410-412 to play all GIFS in SPIFF in a loop.
+            //gifFile.close(); // uncomment lines 406-408 to play all GIFS in SPIFF in a loop.
            //gifFile = root.openNextFile();
             }
          root.close();
@@ -414,3 +412,4 @@ void loop()
       
       delay(1000); // pause before restarting  
    }
+ } // end loop
