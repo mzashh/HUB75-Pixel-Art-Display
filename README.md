@@ -17,6 +17,8 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
   * I have also implemented a WEB-UI using an Async web server which allows to upload, delete, download and play other GIF files on the ESP32.
 
   * The WEB-UI also has auth functionality and allows for remote rebooting of the ESP32.
+  
+  * Added support for 1/8 scan panels via modified library, use firmware-1/8 and modified library.
 
 <p align="center">
 <img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/UI.png" width="450">
@@ -56,6 +58,8 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
   https://github.com/me-no-dev/ESPAsyncWebServer
   
   https://github.com/me-no-dev/AsyncTCP
+  
+* Modified library for 1/8 scan panels https://github.com/mzashh/ESP32-HUB75-MatrixPanel-DMA
   
 * Default credentials
   
