@@ -118,9 +118,9 @@ void configureWebServer() {
             logmessage += " opening";
           }
            else if (strcmp(fileAction, "show") == 0) {
-            logmessage += " previewing";            
-            request->send(SPIFFS, fileName, "video/gif");
-            delay(200);
+            logmessage += " previewing"; 
+            delay(100);
+            request->send(SPIFFS, fileName, "image/gif");
            }
           else {
             logmessage += " ERROR: invalid action param supplied";
