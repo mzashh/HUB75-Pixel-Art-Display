@@ -69,11 +69,11 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
   
 * Misc stuff
     
-  * The brightness can be changed in firmware.ino line 289 (value can be 0-255)
+  * The brightness can be changed in firmware.ino line 285 (value can be 0-255)
     
-  * If you want the Panel to play all stored GIFS one by one instead of just looping a particular one then in firmware.ino uncomment lines 410-412
+  * If you want the Panel to play all stored GIFS one by one instead of just looping a particular one then in firmware.ino uncomment lines 406-408
     
-  * If you want the Panel to wait until WIFI is connected in firmware.ino uncomment lines 334-336
+  * If you want the Panel to wait until WIFI is connected in firmware.ino uncomment lines 330-332
     
   * Other resolution Panels can be used as per the use cases shown in https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA   
 
