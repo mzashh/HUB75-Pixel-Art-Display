@@ -18,7 +18,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 
   * The WEB-UI also has auth functionality and allows for remote rebooting of the ESP32.
   
-  * Added support for 1/8 scan panels via modified library, use firmware-1/8 and modified library.
+  * Added support for 1/8 scan panels via modified library, use firmware_1-8 and modified library.
 
 <p align="center">
 <img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/UI.png" width="450">
