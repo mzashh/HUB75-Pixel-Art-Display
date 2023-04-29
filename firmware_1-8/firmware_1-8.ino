@@ -44,6 +44,10 @@ const String default_httpuser = "admin";
 const String default_httppassword = "admin";
 const int default_webserverporthttp = 80;
 
+const char* PARAM_INPUT = "value";
+String inputMessage;
+String sliderValue = "100"; //default brightness value
+
 struct Config {
 String ssid;               // wifi ssid
 String wifipassword;       // wifi password
@@ -68,6 +72,7 @@ int webserverporthttp;     // http port number for web admin
 
 void GIFDraw(GIFDRAW *pDraw)
  {
+    dma_display->setBrightness8(sliderValue.toInt());
     uint8_t *s;
     uint16_t *d, *usPalette, usTemp[320];
     int x, y, iWidth;
@@ -289,7 +294,7 @@ void setup() {
   // Display Setup
   dma_display = new MatrixPanel_I2S_DMA(mxconfig);
   dma_display->begin();
-  dma_display->setBrightness8(200); //0-255
+  dma_display->setBrightness8(sliderValue.toInt()); //0-255
   dma_display->clearScreen();
 
   // create OneEightMatrixDisplaylay object based on our newly created dma_display object
