@@ -65,7 +65,7 @@ int webserverporthttp;     // http port number for web admin
 
 void GIFDraw(GIFDRAW *pDraw)
  {
-    dma_display->setBrightness8(sliderValue.toInt())
+    dma_display->setBrightness8(sliderValue.toInt());
     uint8_t *s;
     uint16_t *d, *usPalette, usTemp[320];
     int x, y, iWidth;
@@ -287,7 +287,7 @@ void setup() {
   dma_display = new MatrixPanel_I2S_DMA(mxconfig);
   dma_display->setRotation(0); // Flip display by 90°, the value can be 0-4
   dma_display->begin();
-  dma_display->setBrightness8(sliderValue.toInt()) //0-255
+  dma_display->setBrightness8(sliderValue.toInt()); //0-255
   dma_display->clearScreen();
   
   Serial.begin(115200);
