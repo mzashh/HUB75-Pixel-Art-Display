@@ -10,7 +10,7 @@
 #include <SPIFFS.h>
 #include "webpages.h"
 
-#define FIRMWARE_VERSION "v0.2.1a"
+#define FIRMWARE_VERSION "v0.2.2a"
 
 #define A_PIN   22 
 #define B_PIN   32 
