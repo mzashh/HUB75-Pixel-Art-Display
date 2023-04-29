@@ -5,6 +5,12 @@ const char index_html[] PROGMEM = R"rawliteral(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
 </head>
+<style>
+  .slider { -webkit-appearance: none; margin: 14px; width: 360px; height: 5px; background: #FFD65C;
+    outline: none; -webkit-transition: .2s; transition: opacity .2s;}
+  .slider::-webkit-slider-thumb {-webkit-appearance: none; appearance: none; width: 12px; height: 12px; background: #003249; cursor: pointer;}
+  .slider::-moz-range-thumb { width: 35px; height: 35px; background: #003249; cursor: pointer; }
+</style>
 <body>
   <p>HUB75 Pixel Art display by mzashh</p>
   <p>Firmware: %FIRMWARE%</p>
@@ -15,10 +21,20 @@ const char index_html[] PROGMEM = R"rawliteral(
   <button onclick="listFilesButton()">List Files</button>
   <button onclick="showUploadButtonFancy()">Upload File</button>
   </p>
+  <p>Brightness: <span id="textSliderValue">%SLIDERVALUE%</span></p>
+  <p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="255" value="%SLIDERVALUE%" step="1" class="slider"></p>
   <p id="status"></p>
   <p id="detailsheader"></p>
   <p id="details"></p>
 <script>
+function updateSliderPWM(element) {
+  var sliderValue = document.getElementById("pwmSlider").value;
+  document.getElementById("textSliderValue").innerHTML = sliderValue;
+  console.log(sliderValue);
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/slider?value="+sliderValue, true);
+  xhr.send();
+}
 function logoutButton() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "/logout", true);
