@@ -55,6 +55,20 @@ void configureWebServer() {
 
   });
 
+  server->on("/slider", HTTP_GET, [] (AsyncWebServerRequest *request) {
+    String inputMessage;
+    // GET input1 value on <ESP_IP>/slider?value=<inputMessage>
+    if (request->hasParam(PARAM_INPUT)) {
+      inputMessage = request->getParam(PARAM_INPUT)->value();
+      sliderValue = inputMessage;
+      dma_display->setBrightness8(sliderValue.toInt());
+    }
+      else {
+      inputMessage = "No message sent";
+    }
+    Serial.print(inputMessage);
+    });
+
   server->on("/reboot", HTTP_GET, [](AsyncWebServerRequest * request) {
     String logmessage = "Client:" + request->client()->remoteIP().toString() + " " + request->url();
 
