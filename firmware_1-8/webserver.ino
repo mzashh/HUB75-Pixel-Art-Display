@@ -20,7 +20,7 @@ String processor(const String& var) {
   if (var == "SLIDERVALUE"){
     return sliderValue;
   }
-  return String();
+    return String();
 }
 
 void configureWebServer() {
