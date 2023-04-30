@@ -72,7 +72,6 @@ int webserverporthttp;     // http port number for web admin
 
 void GIFDraw(GIFDRAW *pDraw)
  {
-    dma_display->setBrightness8(sliderValue.toInt());
     uint8_t *s;
     uint16_t *d, *usPalette, usTemp[320];
     int x, y, iWidth;
