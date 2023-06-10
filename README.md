@@ -85,6 +85,9 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
     
   * Other resolution Panels can be used as per the use cases shown in https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA   
 
+  * Auth functionality can be bypassed (disabled) by changing "false" in line 169 in webserver.ino to "true"
+
+
 # Credits
 
   * Animated GIF example from https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA
