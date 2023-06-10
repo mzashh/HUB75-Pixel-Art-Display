@@ -166,7 +166,7 @@ void notFound(AsyncWebServerRequest *request) {
 
 // used by server.on functions to discern whether a user has the correct httpapitoken OR is authenticated by username and password
 bool checkUserWebAuth(AsyncWebServerRequest * request) {
-  bool isAuthenticated = false;
+  bool isAuthenticated = false; // replace false with true if you want to disable authentication
 
   if (request->authenticate(config.httpuser.c_str(), config.httppassword.c_str())) {
     Serial.println("is authenticated via username and password");
