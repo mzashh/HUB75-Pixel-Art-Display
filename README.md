@@ -53,6 +53,8 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 * CLK_PIN --> 16
 
 # Firmware
+* Use Arduino IDE v1.8.19
+
 * Required libraries
 
   https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA
