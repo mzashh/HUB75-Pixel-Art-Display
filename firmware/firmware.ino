@@ -14,7 +14,8 @@
 
 #define A_PIN   22 
 #define B_PIN   32 
-#define C_PIN   33  
+#define C_PIN   33
+#define D_PIN   17 
 #define E_PIN   21 
 
 
@@ -277,6 +278,7 @@ void setup() {
   mxconfig.gpio.a = A_PIN;
   mxconfig.gpio.b = B_PIN;
   mxconfig.gpio.c = C_PIN;
+  mxconfig.gpio.d = D_PIN;
   mxconfig.gpio.e = E_PIN;
   
   mxconfig.clkphase = false;
