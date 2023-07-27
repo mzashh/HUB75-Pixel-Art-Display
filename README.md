@@ -51,6 +51,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 * E_PIN --> 21
 * OE_PIN --> 15
 * CLK_PIN --> 16
+* LAT_PIN --> 4
 
 # Firmware
 * Use Arduino IDE v1.8.19
