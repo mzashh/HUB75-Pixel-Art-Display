@@ -7,7 +7,6 @@
 #include <WiFi.h>
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
-#include <SPIFFS.h>
 #include "webpages.h"
 
 #define FIRMWARE_VERSION "v0.2.2a"
