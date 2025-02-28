@@ -14,7 +14,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 <body>
   <p>HUB75 Pixel Art display by mzashh</p>
   <p>Firmware: %FIRMWARE%</p>
-  <p>Free Storage: <span id="freespiffs">%FREESPIFFS%</span> | Used Storage: <span id="usedspiffs">%USEDSPIFFS%</span> | Total Storage: <span id="totalspiffs">%TOTALSPIFFS%</span></p>
+  <p>Free Storage: <span id="freeflash">%FREEFLASH%</span> | Used Storage: <span id="usedflash">%USEDFLASH%</span> | Total Storage: <span id="totalflash">%TOTALFLASH%</span></p>
   <p>
   <button onclick="logoutButton()">Logout</button>
   <button onclick="rebootButton()">Reboot</button>
