@@ -39,7 +39,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 * An ESP32, S2 or S3. 
 
 # Schematics
-* GPIO 34+ are on the ESP32 are input only!!
+* GPIO 34+ on the ESP32 are input only!!
 * GPIO 5, 23, 18, 19 are reserverd for a SD card which will be added in the future.
 
 * R1_PIN --> 25
