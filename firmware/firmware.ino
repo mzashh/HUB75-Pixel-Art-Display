@@ -1,15 +1,15 @@
 //By mzashh https://github.com/mzashh
+//Experimental Test Firmware
 
-#define FILESYSTEM SPIFFS
-#include <SPIFFS.h>
+#define FIRMWARE_VERSION "v0.2.5a"
+#define FILESYSTEM LittleFS
+#include <LittleFS.h>
 #include <AnimatedGIF.h>
 #include <ESP32-HUB75-MatrixPanel-I2S-DMA.h>
 #include <WiFi.h>
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include "webpages.h"
-
-#define FIRMWARE_VERSION "v0.2.2a"
 
 #define A_PIN   22 
 #define B_PIN   32 
@@ -31,8 +31,8 @@ uint16_t myRED = dma_display->color565(255, 0, 0);
 uint16_t myGREEN = dma_display->color565(0, 255, 0);
 uint16_t myBLUE = dma_display->color565(0, 0, 255);
 
-const String default_ssid = "yourssid";
-const String default_wifipassword = "yourpassword";
+const String default_ssid = "yourSSID";
+const String default_wifipassword = "yourPassword";
 const String default_httpuser = "admin";
 const String default_httppassword = "admin";
 const int default_webserverporthttp = 80;
@@ -50,9 +50,9 @@ int webserverporthttp;     // http port number for web admin
 };
 
 
- Config config;                        // configuration
- bool shouldReboot = false;            // schedule a reboot
- AsyncWebServer *server;               // initialise webserver
+ Config config;              // configuration
+ bool shouldReboot = false; // schedule a reboot
+ AsyncWebServer *server;   // initialise webserver
 
 // function defaults
  String listFiles(bool ishtml = false);
@@ -211,7 +211,7 @@ void ShowGIF(char *name)
     Serial.flush();
     while (gif.playFrame(true, NULL))
     {      
-      if ( (millis() - start_tick) > 8000) { // we'll get bored after about 8 seconds of the same looping gif
+      if ( (millis() - start_tick) > 50000) { // we'll get bored after about 50 seconds of the same looping gif
         break;
       }
     }
@@ -229,8 +229,8 @@ void rebootESP(String message) {
  
 String listFiles(bool ishtml) {  // list all of the files, if ishtml=true, return html rather than simple text
   String returnText = "";
-  Serial.println("Listing files stored on SPIFFS");
-  File root = SPIFFS.open("/");
+  Serial.println("Listing files stored on Flash");
+  File root = LittleFS.open("/");
   File foundfile = root.openNextFile();
   if (ishtml) {
     returnText += "<table><tr><th align='left'>Name</th><th align='left'>Size</th><th align='justify'>GIF</th><th></th><th></th></tr>";
@@ -296,28 +296,22 @@ void setup() {
 
   Serial.println("Booting ...");
 
-  Serial.println("Mounting SPIFFS ...");
-  if (!SPIFFS.begin(true)) {
-    // if you have not used SPIFFS before on a ESP32, it will show this error.
-    // after a reboot SPIFFS will be configured and will happily work.
-    Serial.println("ERROR: Cannot mount SPIFFS, Rebooting");
-    rebootESP("ERROR: Cannot mount SPIFFS, Rebooting");
+  Serial.println("Mounting LittleFS ...");
+  if (!LittleFS.begin(true)) {
+    // if you have not used LittleFS. before on a ESP32, it will show this error.
+    // after a reboot LittleFS. will be configured and will happily work.
+    Serial.println("ERROR: Cannot mount LittleFS, Rebooting");
+    rebootESP("ERROR: Cannot mount LittleFS, Rebooting");
   }
 
   Serial.begin(115200);
   Serial.println("Starting AnimatedGIFs Sketch");
-
-  // Start filesystem
-  Serial.println(" * Loading SPIFFS");
-  if(!SPIFFS.begin()){
-  Serial.println("SPIFFS Mount Failed");
-  }
   
   dma_display->begin();
 
-  Serial.print("SPIFFS Free: "); Serial.println(humanReadableSize((SPIFFS.totalBytes() - SPIFFS.usedBytes())));
-  Serial.print("SPIFFS Used: "); Serial.println(humanReadableSize(SPIFFS.usedBytes()));
-  Serial.print("SPIFFS Total: "); Serial.println(humanReadableSize(SPIFFS.totalBytes()));
+  Serial.print("Flash Free: "); Serial.println(humanReadableSize((LittleFS.totalBytes() - LittleFS.usedBytes())));
+  Serial.print("Flash Used: "); Serial.println(humanReadableSize(LittleFS.usedBytes()));
+  Serial.print("Flash Total: "); Serial.println(humanReadableSize(LittleFS.totalBytes()));
 
   Serial.println(listFiles());
 
@@ -409,7 +403,7 @@ void loop()
                
               }
              // dma_display->fillScreen(dma_display->color565(0, 0, 0)); 
-            //gifFile.close(); // uncomment lines 406-408 to play all GIFS in SPIFF in a loop.
+            //gifFile.close(); // uncomment lines 406-408 to play all GIFS stored in the Flash in a loop.
            //gifFile = root.openNextFile();
             }
          root.close();
