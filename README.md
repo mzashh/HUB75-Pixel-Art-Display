@@ -7,6 +7,10 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 <img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/display.jpg" width="500">
 </p>
 
+# Dev Branch Changes
+
+  * Changed the File System to LittleFS.
+
 # Features
 * As of now the firmware has minimum fuctionality.
 
