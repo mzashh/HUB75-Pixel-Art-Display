@@ -5,16 +5,16 @@ String processor(const String& var) {
     return FIRMWARE_VERSION;
   }
 
-  if (var == "FREESPIFFS") {
-    return humanReadableSize((SPIFFS.totalBytes() - SPIFFS.usedBytes()));
+  if (var == "FREEFLASH") {
+    return humanReadableSize((LittleFS.totalBytes() - LittleFS.usedBytes()));
   }
 
-  if (var == "USEDSPIFFS") {
-    return humanReadableSize(SPIFFS.usedBytes());
+  if (var == "USEDFLASH") {
+    return humanReadableSize(LittleFS.usedBytes());
   }
 
-  if (var == "TOTALSPIFFS") {
-    return humanReadableSize(SPIFFS.totalBytes());
+  if (var == "TOTALFLASH") {
+    return humanReadableSize(LittleFS.totalBytes());
   }
   
   if (var == "SLIDERVALUE"){
@@ -116,7 +116,7 @@ void configureWebServer() {
 
         logmessage = "Client:" + request->client()->remoteIP().toString() + " " + request->url() + "?name=" + String(fileName) + "&action=" + String(fileAction);
 
-        if (!SPIFFS.exists(fileName)) {
+        if (!LittleFS.exists(fileName)) {
           Serial.println(logmessage + " ERROR: file does not exist");
           request->send(400, "text/plain", "ERROR: file does not exist");
         } else {
@@ -124,10 +124,10 @@ void configureWebServer() {
          
           if (strcmp(fileAction, "download") == 0) {
             logmessage += " downloaded";
-            request->send(SPIFFS, fileName, "application/octet-stream");
+            request->send(LittleFS, fileName, "application/octet-stream");
           } else if (strcmp(fileAction, "delete") == 0) {
             logmessage += " deleted";
-            SPIFFS.remove(fileName);
+            LittleFS.remove(fileName);
             request->send(200, "text/plain", "Deleted File: " + String(fileName));
           }
           else if (strcmp(fileAction, "play") == 0) {
@@ -139,7 +139,7 @@ void configureWebServer() {
            else if (strcmp(fileAction, "show") == 0) {
             logmessage += " previewing"; 
             delay(100);
-            request->send(SPIFFS, fileName, "image/gif");
+            request->send(LittleFS, fileName, "image/gif");
            }
           else {
             logmessage += " ERROR: invalid action param supplied";
@@ -185,7 +185,7 @@ void handleUpload(AsyncWebServerRequest *request, String filename, size_t index,
     if (!index) {
       logmessage = "Upload Start: " + String(filename);
       // open the file on first call and store the file handle in the request object
-      request->_tempFile = SPIFFS.open("/" + filename, "w");
+      request->_tempFile = LittleFS.open("/" + filename, "w");
       Serial.println(logmessage);
     }
 
