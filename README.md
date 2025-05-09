@@ -8,6 +8,10 @@ A Wi-Fi-enabled LED Pixel Art Display based on HUB75E panels, powered by an ESP3
 <img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/display.jpg" width="500">
 </p>
 
+<p align="center">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/preview.gif" width="500">
+</p>
+
 ---
 
 ## Changelog
@@ -47,7 +51,7 @@ A Wi-Fi-enabled LED Pixel Art Display based on HUB75E panels, powered by an ESP3
   - Toggle GIF looping to either loop a single GIF or play all stored GIFs sequentially.
 
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/WUI.png" width="1000" height="700">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/WUI.png" width="857" height="600">
 </p>
 
 ---
