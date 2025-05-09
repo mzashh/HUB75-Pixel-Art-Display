@@ -8,15 +8,24 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 </p>
 
 # Dev Branch Changes
-
+Version 0.4.5a
+  * Added an NTP Clock
+  * Added Scrolling Custom Text
+  * Clock and Text colour can be changed via the WebUI
+  * Text Font and scroll speed can be changed
+  * Added Toggle for GIF display, Clock and text.
+  * Added Toggle for GIF Looping
+    
+Version 0.2.5a
   * Changed the File System to LittleFS.
 
 # Features
-* As of now the firmware has minimum fuctionality.
 
   * Upon powering up the Panel connects to the WIFI network and shows the firmware version, IP address, RSSI and WIFI SSID for 4 sec.
 
   * It then plays the GIF files stored in the SPI Flash of the ESP32.
+
+  * An NTP Clock Starts up and Shows the Time (configure GMT offset and DST offset in the firmware.
 
   * I have also implemented a WEB-UI using an Async web server which allows to upload, delete, download and play other GIF files on the ESP32.
   
@@ -25,6 +34,16 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
   * The WEB-UI also has auth functionality and allows for remote rebooting of the ESP32.
   
   * Added support for 1/8 scan panels via modified library, use firmware_1-8 and modified library.
+
+  * You can disable the Clock and insted add a custom scrolling text.
+
+  * Text and clock colour can be changed via the WebUI.
+
+  * Text scroll speed and Size can be changed via the WebUI.
+
+  * Clock, Text or the GIF playback can be disabled or enabled individually.
+
+  * GIF loop toggle allows to loop one GIF or play all GIFs which are stored in the flash one by one.
   
   
 <p align="center">
@@ -34,7 +53,6 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 # Hardware
 * Any HUB75 panel compatible with the https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA library 
 * By default a 64x64 1/32 scan panel is supported.
-* For firmware_1-8, by default a 32x32 1/8 scan outdoor panel is supported.
 
 * An ESP32, S2 or S3. 
 
@@ -58,13 +76,15 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 * LAT_PIN --> 4
 
 # Firmware
-* Use Arduino IDE v1.8.19
+* Use Arduino IDE v1.8.19 or Platform IO
 
 * Required libraries
 
   https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA
   
   https://github.com/bitbank2/AnimatedGIF
+
+  https://github.com/mrcodetastic/GFX_Lite
   
   https://github.com/me-no-dev/ESPAsyncWebServer
   
@@ -74,25 +94,21 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
   
 * Default credentials
   
-  * The WIFI SSID can be changed in firmware.ino line 34 (only use 2.4GHZ network as the ESP32 supports those only)
+  * The WIFI SSID can be changed in firmware.ino(only use 2.4GHZ network as the ESP32 supports those only)
   
-  * The WIFI password can be changed in firmware.ino line 35
+  * The WIFI password can be changed in firmware.ino
   
-  * The WEB-UI username can be changed in firmware.ino line 36
+  * The WEB-UI username can be changed in firmware.ino
   
-  * The WEB-UI password can be changed in firmware.ino line 37
+  * The WEB-UI password can be changed in firmware.ino
   
 * Misc stuff
     
-  * The default brightness can be changed in firmware.ino line 42 (value can be 0-255)
-    
-  * If you want the Panel to play all stored GIFS one by one instead of just looping a particular one then in firmware.ino uncomment lines 410-412
-    
-  * If you want the Panel to wait until WIFI is connected in firmware.ino uncomment lines 334-336
+  * The default brightness can be changed in firmware.ino (value can be 0-255)
     
   * Other resolution Panels can be used as per the use cases shown in https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA   
 
-  * Auth functionality can be bypassed (disabled) by changing "false" in line 169 in webserver.ino to "true"
+  * Auth functionality can be bypassed (disabled) by changing "false" in line 258 in webserver.ino to "true"
 
 
 # Credits
