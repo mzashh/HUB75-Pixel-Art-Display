@@ -5,11 +5,11 @@ A Wi-Fi-enabled LED Pixel Art Display based on HUB75E panels, powered by an ESP3
 > **Note**: The colors are much more vibrant in person, and the flickering only appears on camera.
 
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/preview.gif" width="500">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/display.jpg" width="500">
 </p>
 
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/display.jpg" width="500">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/preview.gif" width="500">
 </p>
 
 ---
