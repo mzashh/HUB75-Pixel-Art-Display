@@ -8,7 +8,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
 </p>
 
 # Dev Branch Changes
-Version 0.4.5a
+Version 0.4.5a (Major Update)
   * Added an NTP Clock
   * Added Scrolling Custom Text
   * Clock and Text colour can be changed via the WebUI
