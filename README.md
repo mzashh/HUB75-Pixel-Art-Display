@@ -10,7 +10,7 @@ A Wi-Fi-enabled LED Pixel Art Display that plays GIF files on HUB75 panels, powe
 
 ---
 
-## Dev Branch Updates
+## Changelog
 
 ### Version 0.4.5a (Major Update)
 - Added an **NTP Clock**.
