@@ -24,7 +24,7 @@ A  WIFI enabled LED Pixel Art Display which plays GIF files based on HUB75 panel
   
   
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/WUI.png" width="450">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/WU.png" width="450">
 </p>
 
 # Hardware
