@@ -45,7 +45,6 @@ A Wi-Fi-enabled LED Pixel Art Display that plays GIF files on HUB75 panels, powe
 - **Playback Toggles**:
   - Enable or disable GIF playback, clock, or scrolling text individually.
   - Toggle GIF looping to either loop a single GIF or play all stored GIFs sequentially.
-- **1/8 Scan Panel Support**: Added support for 1/8 scan panels via a modified library (use `firmware_1-8` and the modified library).
 
 <p align="center">
 <img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/WUI.png" width="1000" height="700">
