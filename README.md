@@ -1,6 +1,6 @@
 # HUB75 Pixel Art Display
 
-A Wi-Fi-enabled LED Pixel Art Display that plays GIF files on HUB75 panels, powered by an ESP32.
+A Wi-Fi-enabled LED Pixel Art Display based on HUB75E panels, powered by an ESP32.
 
 > **Note**: The colors are much more vibrant in person, and the flickering only appears on camera.
 
