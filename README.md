@@ -122,6 +122,16 @@ A Wi-Fi-enabled LED Pixel Art Display based on HUB75E panels, powered by an ESP3
 
 ---
 
+## Case and Assembly
+
+> For smooth assembly and answers to most questions, refer to the project documentation on my website.
+
+- **3D Printable Files for the Case and the Diffuser**:
+  - [Printables](https://www.printables.com/model/875329-hub75-pixel-art-display-case)
+- **Project Documentation and Assembly**:
+  - [My Website](https://mzashh.weebly.com/pixel-art-display.html)
+   
+
 ## Credits
 
 - **GIF Playback**: Based on examples from the [ESP32-HUB75-MatrixPanel-DMA library](https://github.com/mrfaptastic/ESP32-HUB75-MatrixPanel-DMA).
