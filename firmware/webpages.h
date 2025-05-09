@@ -12,7 +12,7 @@ const char index_html[] PROGMEM = R"rawliteral(
   .slider::-moz-range-thumb { width: 35px; height: 35px; background: #003249; cursor: pointer; }
 </style>
 <body>
-  <p>HUB75 Pixel Art display by mzashh</p>
+  <p>HUB75 Pixel Art display by <a href="https://github.com/mzashh/HUB75-Pixel-Art-Display/" target="_blank">mzashh</a></p>
   <p>Firmware: %FIRMWARE%</p>
   <p>Free Storage: <span id="freeflash">%FREEFLASH%</span> | Used Storage: <span id="usedflash">%USEDFLASH%</span> | Total Storage: <span id="totalflash">%TOTALFLASH%</span></p>
   <p>
