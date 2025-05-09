@@ -90,17 +90,105 @@ void configureWebServer() {
     }
   });
 
-  server->on("/listfiles", HTTP_GET, [](AsyncWebServerRequest * request)
-  {
+  server->on("/listfiles", HTTP_GET, [](AsyncWebServerRequest *request) {
     String logmessage = "Client:" + request->client()->remoteIP().toString() + " " + request->url();
     if (checkUserWebAuth(request)) {
-      logmessage += " Auth: Success";
-      Serial.println(logmessage);
-      request->send(200, "text/plain", listFiles(true));
+        logmessage += " Auth: Success";
+        Serial.println(logmessage);
+        request->send(200, "text/plain", listFiles(true, 1, maxGIFsPerPage)); // Explicitly pass page and pageSize
     } else {
-      logmessage += " Auth: Failed";
-      Serial.println(logmessage);
-      return request->requestAuthentication();
+        logmessage += " Auth: Failed";
+        Serial.println(logmessage);
+        return request->requestAuthentication();
+    }
+  });
+
+  server->on("/list", HTTP_GET, [](AsyncWebServerRequest *request) {
+    int page = 1; // Default to the first page
+    if (request->hasParam("page")) {
+        page = request->getParam("page")->value().toInt();
+    }
+
+    //Serial.printf("Requested page: %d\n", page); // Debug log
+
+    String fileList = listFiles(true, page, maxGIFsPerPage); // Generate the table content
+    request->send(200, "text/html", fileList);
+});
+
+
+  server->on("/setColor", HTTP_GET, [](AsyncWebServerRequest *request) {
+    if (request->hasParam("r") && request->hasParam("g") && request->hasParam("b")) {
+        colorR = request->getParam("r")->value().toInt();
+        colorG = request->getParam("g")->value().toInt();
+        colorB = request->getParam("b")->value().toInt();
+
+        Serial.printf("Color updated: R=%d, G=%d, B=%d\n", colorR, colorG, colorB);
+
+        request->send(200, "text/plain", "Color updated");
+    } else {
+        request->send(400, "text/plain", "Missing parameters");
+    }
+  });
+
+  server->on("/toggleGIF", HTTP_GET, [](AsyncWebServerRequest *request) {
+    if (request->hasParam("state")) {
+        String state = request->getParam("state")->value();
+        gifEnabled = (state == "on"); // Update the gifEnabled variable
+        Serial.printf("GIF playback state changed: %s\n", gifEnabled ? "ON" : "OFF");
+        request->send(200, "text/plain", "GIF playback state updated");
+    } else {
+        request->send(400, "text/plain", "Missing 'state' parameter");
+    }
+ });
+ 
+ server->on("/toggleLoopGif", HTTP_GET, [](AsyncWebServerRequest *request) {
+  if (request->hasParam("state")) {
+      String state = request->getParam("state")->value();
+      loopGifEnabled = (state == "on");
+      Serial.printf("Loop GIF state updated to: %s\n", loopGifEnabled ? "ON" : "OFF");
+      request->send(200, "text/plain", "Loop GIF state updated");
+  } else {
+      request->send(400, "text/plain", "Missing 'state' parameter");
+  }
+  });
+
+ server->on("/toggleClock", HTTP_GET, [](AsyncWebServerRequest *request) {
+  if (request->hasParam("state")) {
+      String state = request->getParam("state")->value();
+      clockEnabled = (state == "on");
+      if (clockEnabled) {
+          scrollTextEnabled = false; // Disable scrolling text if the clock is enabled
+      }
+      Serial.printf("Clock state changed: %s\n", clockEnabled ? "ON" : "OFF");
+      request->send(200, "text/plain", "Clock state updated");
+  } else {
+      request->send(400, "text/plain", "Missing 'state' parameter");
+  }
+});
+
+server->on("/toggleScrollText", HTTP_GET, [](AsyncWebServerRequest *request) {
+  if (request->hasParam("state")) {
+      String state = request->getParam("state")->value();
+      scrollTextEnabled = (state == "on");
+      if (scrollTextEnabled) {
+          clockEnabled = false; // Disable the clock if scrolling text is enabled
+      }
+      Serial.printf("Scrolling text state changed: %s\n", scrollTextEnabled ? "ON" : "OFF");
+      request->send(200, "text/plain", "Scrolling text state updated");
+  } else {
+      request->send(400, "text/plain", "Missing 'state' parameter");
+  }
+});
+
+  server->on("/updateScrollText", HTTP_GET, [](AsyncWebServerRequest *request) {
+    if (request->hasParam("text") && request->hasParam("fontSize") && request->hasParam("speed")) {
+        scrollText = request->getParam("text")->value();
+        scrollFontSize = request->getParam("fontSize")->value().toInt();
+        scrollSpeed = request->getParam("speed")->value().toInt();
+        Serial.printf("Scrolling text updated: '%s', Font size: %d, Speed: %d\n", scrollText.c_str(), scrollFontSize, scrollSpeed);
+        request->send(200, "text/plain", "Scrolling text updated");
+    } else {
+        request->send(400, "text/plain", "Missing parameters");
     }
   });
 
@@ -131,8 +219,9 @@ void configureWebServer() {
             request->send(200, "text/plain", "Deleted File: " + String(fileName));
           }
           else if (strcmp(fileAction, "play") == 0) {
-            gif.close();
-            dma_display->fillScreen(dma_display->color565(0, 0, 0));
+            requestedGifPath = fileName; // Store the requested GIF path
+            //gif.close();
+            //dma_display->fillScreen(dma_display->color565(0, 0, 0));
             gifFile = FILESYSTEM.open(fileName);
             logmessage += " opening";
           }
