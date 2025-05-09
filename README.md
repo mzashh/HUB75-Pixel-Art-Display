@@ -47,7 +47,7 @@ Version 0.2.5a
   
   
 <p align="center">
-<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/WUI.png" width="450">
+<img src="https://github.com/mzashh/HUB75-Pixel-Art-Display/blob/main/images/WUI.png" width="1000" height="700">
 </p>
 
 # Hardware
