@@ -108,9 +108,6 @@ A Wi-Fi-enabled LED Pixel Art Display based on HUB75E panels, powered by an ESP3
 - [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
 - [AsyncTCP](https://github.com/me-no-dev/AsyncTCP)
 
-### Modified Library for 1/8 Scan Panels
-- [ESP32-HUB75-MatrixPanel-DMA (Modified)](https://github.com/mzashh/ESP32-HUB75-MatrixPanel-DMA)
-
 ### Configuration
 - **Wi-Fi**:
   - Change the Wi-Fi SSID and password in `firmware.ino` (only 2.4GHz networks are supported).
